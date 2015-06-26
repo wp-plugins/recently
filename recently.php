@@ -1617,7 +1617,7 @@ if ( !class_exists('Recently') ) {
 				
 			}
 
-			return apply_filters( 'recently_get_views', $pageviews );
+			return apply_filters( 'recently_get_views', $pageviews, $p->ID );
 
 		} // end _get_pageviews
 
