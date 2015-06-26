@@ -12,7 +12,9 @@ Recently is a highly customizable recent posts widget.
 
 == Description ==
 
-Recently is a highly customizable recent posts widget.
+Let's face it: WordPress' default Recent Posts widget does the job as described, but it's not very flexible. Things like excluding certain entries from the list or displaying recent posts by category can't be done with the stock Recent Posts widget. Therefore, let me introduce Recently.
+
+Recently is a WordPress widget that displays your site's most recent posts. And it doesn't stop there:
 
 = Main Features =
 * **Thumbnails support!** (*see the [FAQ section](http://wordpress.org/extend/plugins/recently/faq/) for technical requirements*).
