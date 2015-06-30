@@ -2193,7 +2193,7 @@ if ( !class_exists('Recently') ) {
 				return false;
 
 			$params = array();
-			$pattern = '/\{(excerpt|summary|metadata|title|image|thumb|thumb_img|rating|score|url|text_title|author|category|views|comments|date)\}/i';
+			$pattern = '/\{(excerpt|summary|metadata|title|image|thumb|thumb_img|rating|score|url|text_title|author|taxonomy|views|comments|date)\}/i';
 			preg_match_all($pattern, $string, $matches);
 
 			array_map('strtolower', $matches[0]);
@@ -2251,8 +2251,27 @@ if ( !class_exists('Recently') ) {
 				$string = str_replace( "{author}", $data['author'], $string );
 			}
 
-			if ( in_array("{category}", $matches[0]) ) {
-				$string = str_replace( "{category}", $data['category'], $string );
+			if ( in_array("{taxonomy}", $matches[0]) ) {
+				$taxonomies = '';
+				
+				if ( is_array($data['taxonomy']) && !empty($data['taxonomy']) ) {
+				
+					foreach( $data['taxonomy'] as $tax => $links ) {
+						$taxonomies .= '<span class="recently-taxonomy taxonomy-' . $tax . '">';
+						
+						for ($l = 0; $l < count($links); $l++ )
+							$taxonomies .= $links[$l] . ', ';
+						
+						$taxonomies = rtrim( $taxonomies, ', ' );
+							
+						$taxonomies .= '</span> ';
+					}
+				
+				}
+				
+				$taxonomies = trim( $taxonomies );
+				
+				$string = str_replace( "{taxonomy}", $taxonomies, $string );
 			}
 
 			if ( in_array("{views}", $matches[0]) ) {
