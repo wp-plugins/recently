@@ -116,7 +116,8 @@ For the time being, the [Support Forum](http://wordpress.org/support/plugin/rece
 == Screenshots ==
 
 1. Widgets Control Panel.
-2. Recently Widget with custom HTML.
+2. Recently Widget.
+3. Recently Widget with custom HTML.
 
 == Changelog ==
 
