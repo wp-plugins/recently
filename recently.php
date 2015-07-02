@@ -584,14 +584,14 @@ if ( !class_exists('Recently') ) {
 			 */
 			// post title
 			$instance['shorten_title']['active'] = isset( $new_instance['shorten_title-active'] );
-			$instance['shorten_title']['words'] = isset( $new_instance['shorten_title-words'] );			
+			$instance['shorten_title']['words'] = $new_instance['shorten_title-words'];
 			$instance['shorten_title']['length'] = ( $this->__is_numeric($new_instance['shorten_title-length']) && $new_instance['shorten_title-length'] > 0 )
 			  ? $new_instance['shorten_title-length']
 			  : 25;
 
 			// post excerpt
 			$instance['post-excerpt']['keep_format'] = isset( $new_instance['post-excerpt-format'] );
-			$instance['post-excerpt']['words'] = isset( $new_instance['post-excerpt-words'] );
+			$instance['post-excerpt']['words'] = $new_instance['post-excerpt-words'];
 			$instance['post-excerpt']['active'] = isset( $new_instance['post-excerpt-active'] );
 			$instance['post-excerpt']['length'] = ( $this->__is_numeric($new_instance['post-excerpt-length']) && $new_instance['post-excerpt-length'] > 0 )
 			  ? $new_instance['post-excerpt-length']
